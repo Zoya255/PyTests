@@ -24,6 +24,8 @@ def arithmetical():
 	print( "a / b =", a / b )
 	print( "b / a =", b / a )
 
+	print( "a ** b =", a ** b )
+
 
 def logical():
 	if a > b:
@@ -89,12 +91,8 @@ def photo(board):
 
 
 def spirit():
-	gif = input("введите свое приветствие: ")
-	photo(gif)
-
-
-def matem():
-	print(225 ** 125)
+	# gif = input("введите свое приветствие: ")
+	photo("gif")
 
 
 if __name__ == '__main__':
@@ -118,4 +116,3 @@ if __name__ == '__main__':
 	print()
 	spirit()
 	print()
-	matem()
