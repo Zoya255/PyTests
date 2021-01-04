@@ -1,14 +1,26 @@
+import pygame
+
+
 class Car:
 
 	# базовые методы
 
-	def __init__(self, spawn_x=0, spawn_y=0, car_color="#ffffff", car_fuel=10, car_max_fuel=10, car_fuel_consum=1):
+	def __init__(self, car_name, spawn_x=0, spawn_y=0, car_color="#ffffff", car_fuel=10, car_max_fuel=10, car_fuel_consum=1):
+		self.name = car_name
 		self.x = spawn_x
 		self.y = spawn_y
 		self.color = car_color
 		self.fuel = car_fuel
 		self.max_fuel = car_max_fuel
 		self.fuel_consum = car_fuel_consum
+
+		print(f"Создана машинка:")
+		print(f"  | Название: {self.name}")
+		print(f"  | Координаты: {self.x}, {self.y}")
+		print(f"  | Цвет: {self.color}")
+		print(f"  | Топливо: {self.fuel} из {self.max_fuel}")
+		print(f"  | Расход: {self.fuel_consum} литр/ход")
+		print()
 
 	def __str__(self):
 		return "Базовый класс для машинок"
@@ -29,25 +41,39 @@ class Car:
 			self.move_left(distance)
 
 	def move_up(self, distance):
-		self.y += distance
-		self.fuel_consumption(distance)
+		if self.fuel_consumption(distance):
+			self.y -= distance
+			print(f"{self.name} | перемещено на {distance} блок вверх")
+			print()
 
 	def move_right(self, distance):
-		self.x += distance
-		self.fuel_consumption(distance)
+		if self.fuel_consumption(distance):
+			self.x += distance
+			print(f"{self.name} | перемещено на {distance} блок вправо")
+			print()
 
 	def move_down(self, distance):
-		self.y -= distance
-		self.fuel_consumption(distance)
+		if self.fuel_consumption(distance):
+			self.y += distance
+			print(f"{self.name} | перемещено на {distance} блок вниз")
+			print()
 
 	def move_left(self, distance):
-		self.x -= distance
-		self.fuel_consumption(distance)
+		if self.fuel_consumption(distance):
+			self.x -= distance
+			print(f"{self.name} | перемещено на {distance} блок влево")
+			print()
 
 	# методы солярки
 
 	def fuel_consumption(self, distance):
-		self.fuel -= ( self.fuel_consum * distance )
+		if self.fuel >= 1:
+			self.fuel -= ( self.fuel_consum * distance )
+			print(f"{self.name} | осталось {self.fuel} литров топлива")
+			return True
+		else:
+			print(f"{self.name} | нет топлива")
+			return False
 
 	def set_full_fuel(self):
 		self.fuel = self.max_fuel
@@ -63,6 +89,9 @@ class Car:
 	def set_color(self, color):
 		self.color = color
 
+	def get_color(self):
+		return self.color
+
 	def set_default(self):
 		self.x = 0
 		self.y = 0
@@ -70,35 +99,11 @@ class Car:
 		self.fuel = 10
 		self.max_fuel = 10
 
-	# методы отображения
+	def get_coordinates(self):
+		return self.x, self.y
 
-	def draw(self):
-		pass
+	def get_x(self):
+		return self.x
 
-	def clear(self):
-		pass
-
-
-audi = Car(10, 10)
-
-print( f"Создана машинка с координатами {audi.x}, {audi.y}" )
-print(audi.get_fuel(True))
-audi.move(1, 10)
-print(audi.get_fuel(True))
-print( f"Координаты {audi.x}, {audi.y}" )
-
-print()
-print()
-print()
-
-camaro = Car(20, 10)
-
-print( f"Создана машинка с координатами {camaro.x}, {camaro.y}")
-print(camaro.get_fuel(True))
-camaro.move(1, 5)
-print(camaro.get_fuel(True))
-print( f"Координаты {camaro.x}, {camaro.y}")
-
-print()
-print()
-print()
+	def get_y(self):
+		return self.y
