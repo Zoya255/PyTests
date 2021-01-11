@@ -34,6 +34,30 @@ class mathematics:
 			print( item )
 
 
-mathematics().all(2, 5)
+class logistics:
+	def big( self, a, b ):
+		if a > b:
+			return a
+		elif b > a:
+			return b
+		else:
+			return False
+
+	def small( self, a, b ):
+		if a < b:
+			return a
+		elif b < a:
+			return b
+		else:
+			return False
+
+	def equally( self, a, b ):
+		if a == b:
+			return True
+		else:
+			return False
 
 
+class string:
+	def invert( self, string ):
+		return string[::-1]

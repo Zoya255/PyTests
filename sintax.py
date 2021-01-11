@@ -95,6 +95,16 @@ def spirit():
 	photo("gif")
 
 
+def files():
+	file_append = open("file.txt", "a")
+	file_append.write("text text text\n\n")
+	file_append.close()
+
+	file_read = open("file.txt", "r")
+	print(file_read.read())
+	file_append.close()
+
+
 if __name__ == '__main__':
 	print_config()
 	print()
@@ -115,4 +125,6 @@ if __name__ == '__main__':
 	photo("тевирп")
 	print()
 	spirit()
+	print()
+	files()
 	print()

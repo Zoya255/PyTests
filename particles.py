@@ -23,8 +23,8 @@ class Projectile(pg.sprite.Sprite):
 
 
 
-screen = pg.display.set_mode((640, 480))
-game_area = pg.Rect(60, 60, 520, 360)
+screen = pg.display.set_mode((1340, 720))
+game_area = pg.Rect(60, 60, 1220, 600)
 game_area_color = pg.Color('aquamarine2')
 clock = pg.time.Clock()
 all_sprites = pg.sprite.Group(Projectile(game_area.center, game_area))
@@ -41,7 +41,7 @@ while not done:
 
 	screen.fill((30, 30, 30))
 	all_sprites.draw(screen)
-	pg.draw.rect(screen, game_area_color, game_area, 2)
+	pg.draw.rect(screen, game_area_color, game_area, 3)
 
 	pg.display.flip()
 	clock.tick(60)
