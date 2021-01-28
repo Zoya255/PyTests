@@ -1,3 +1,8 @@
+# ================= #
+#                   #
+#  Примеры классов  #
+#                   #
+# ================= #
 #
 #  ООП - Объектно-ориентированное программирование
 #
@@ -7,35 +12,40 @@
 #
 
 
-class mathematics:
-	def plus( self, a, b ):
+class Mathematics:
+	@staticmethod
+	def plus( a, b ):
 		return a + b
 
-	def minus( self, a, b ):
+	@staticmethod
+	def minus( a, b ):
 		return a - b
 
-	def multiply( self, a, b ):
+	@staticmethod
+	def multiply( a, b ):
 		return a * b
 
-	def divide( self, a, b ):
+	@staticmethod
+	def divide( a, b ):
 		return a / b
 
 	def all( self, a, b ):
-		list = [0, 0, 0, 0]
+		answers = [0, 0, 0, 0]
 
-		list[0] = self.plus(a, b)
-		list[1] = self.minus(a, b)
-		list[2] = self.multiply(a, b)
-		list[3] = self.divide(a, b)
+		answers[0] = self.plus(a, b)
+		answers[1] = self.minus(a, b)
+		answers[2] = self.multiply(a, b)
+		answers[3] = self.divide(a, b)
 
-		print( list )
+		print( answers )
 
-		for item in list:
-			print( item )
+		for answer in answers:
+			print( answer )
 
 
-class logistics:
-	def big( self, a, b ):
+class Logistics:
+	@staticmethod
+	def big( a, b ):
 		if a > b:
 			return a
 		elif b > a:
@@ -43,7 +53,8 @@ class logistics:
 		else:
 			return False
 
-	def small( self, a, b ):
+	@staticmethod
+	def small( a, b ):
 		if a < b:
 			return a
 		elif b < a:
@@ -51,13 +62,15 @@ class logistics:
 		else:
 			return False
 
-	def equally( self, a, b ):
+	@staticmethod
+	def equally( a, b ):
 		if a == b:
 			return True
 		else:
 			return False
 
 
-class string:
-	def invert( self, string ):
+class Strings:
+	@staticmethod
+	def invert( string ):
 		return string[::-1]
