@@ -27,20 +27,21 @@ class Mathematics:
 
 	@staticmethod
 	def divide( a, b ):
-		return a / b
+		if b == 0:
+			raise ZeroDivisionError
+		else:
+			return a / b
 
-	def all( self, a, b ):
+	@staticmethod
+	def all( a, b ):
 		answers = [0, 0, 0, 0]
 
-		answers[0] = self.plus(a, b)
-		answers[1] = self.minus(a, b)
-		answers[2] = self.multiply(a, b)
-		answers[3] = self.divide(a, b)
+		answers[0] = Mathematics.plus(a, b)
+		answers[1] = Mathematics.minus(a, b)
+		answers[2] = Mathematics.multiply(a, b)
+		answers[3] = Mathematics.divide(a, b)
 
-		print( answers )
-
-		for answer in answers:
-			print( answer )
+		return( answers )
 
 
 class Logistics:
