@@ -1,3 +1,9 @@
+#==================================#
+#                                  #
+#  Простые математические функции  #
+#                                  #
+#==================================#
+
 
 a = 5
 b = 15
@@ -40,6 +46,7 @@ def text_len(text1 = "aaa", text2 = "aab"):
 	else:
 		print(text1, text2)
 
+
 if __name__ == '__main__':
 	minus(a, 1)
 	plus(100, b)
@@ -47,7 +54,5 @@ if __name__ == '__main__':
 	divide(20, 5)
 	print()
 	test(1, 1)
-
-	print(len("1234567"))
-
+	print()
 	text_len()
