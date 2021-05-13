@@ -1,58 +1,69 @@
-#==================================#
-#                                  #
-#  Простые математические функции  #
-#                                  #
-#==================================#
+# ================================================= #
+#                                                   #
+#  Набор простейших функций для расчёта математики  #
+#                                                   #
+# ================================================= #
 
 
 a = 5
 b = 15
 
 
-def minus( a, b ):
-	print(a - b)
+def minus( int1, int2 ):
+	print( int1 - int2 )
 
 
-def plus( a, b ):
-	print(a + b)
+def plus( int1, int2 ):
+	print( int1 + int2 )
 
 
-def multiply( a, b ):
-	print(a * b)
+def multiply( int1, int2 ):
+	print( int1 * int2 )
 
 
-def divide ( a, b ):
-	print(a / b)
+def divide( int1, int2 ):
+	print( int1 / int2 )
 
 
-def test(a, b):
-	if a < b:
-		print( f"{b} is cool")
-	elif a > b:
-		print( f"{a} is cool")
+def int_equal( int1, int2 ):
+	if int1 < int2:
+		print( f"{int2} is bigger" )
+	elif int1 > int2:
+		print( f"{int1} is bigger" )
 	else:
-		print( f"{a} and {b} is cool")
+		print( f"{int1} and {int2} is equal" )
 
 
 # тут будет ваша функция с оператором сравнения
-def text_len(text1 = "aaa", text2 = "aab"):
-	text_len1 = len(text1)
-	text_len2 = len(text2)
+def text_len( str1, str2 ):
+	text_len1 = len( str1 )
+	text_len2 = len( str2 )
 
 	if text_len1 < text_len2:
-		print(text2)
+		print( f"{str2} is longer" )
 	elif text_len1 > text_len2:
-		print(text1)
+		print( f"{str1} is longer" )
 	else:
-		print(text1, text2)
+		print( f"{str1} and {str2} is equal" )
+
 
 
 if __name__ == '__main__':
-	minus(a, 1)
-	plus(100, b)
-	multiply(a,b)
-	divide(20, 5)
+	minus( a, 1 )
+	plus( 100, b )
+	multiply( a, b )
+	divide( 20, 5 )
+
 	print()
+<<<<<<< HEAD
 	test(1, 1)
 	print()
 	text_len()
+=======
+
+	int_equal( 1, 1 )
+
+	print()
+
+	text_len("string", "long string")
+>>>>>>> ec4ea64c3668a1d0b91cf38954d766c2734ea558

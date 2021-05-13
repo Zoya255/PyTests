@@ -1,6 +1,12 @@
-import random
+# ============================= #
+#                               #
+#  Эффект разлетающихся частиц  #
+#                               #
+# ============================= #
 
+import random
 import pygame as pg
+
 from pygame.math import Vector2
 
 
@@ -20,7 +26,6 @@ class Projectile(pg.sprite.Sprite):
 		self.rect.center = self.pos
 		if not self.game_area.contains(self.rect):
 			self.kill()
-
 
 
 screen = pg.display.set_mode((1340, 720))
